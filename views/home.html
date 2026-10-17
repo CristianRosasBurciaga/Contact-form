@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../public/images/favicon.png">
+    <link rel="stylesheet" href="../public/styles/styles.css">
+    <title>Contact Form</title>
+</head>
+<body>
+    <div id="content-container">
+    <h1>Contact Form</h1>
+
+    <form action="#" method="get" id="contact-form">
+        <fieldset id="general-info">
+            <!-- First name input -->
+            <div id="fname-group">
+                <label for="fname" >First Name</label>
+                <input type="text" name="fname" id="fname">
+            </div>
+
+            <!-- Last name input -->
+            <div id="lname-group">
+                <label for="lname" >Last Name</label>
+                <input type="text" name="lname" id="lname">
+            </div>
+
+            <!-- Job title input -->
+            <div id="job-group">
+                <label for="job" >Job Title</label>
+                <input type="text" name="job" id="job">
+            </div>
+
+            <!-- Company input -->
+            <div id="company-group">
+                <label for="company" >Company</label>
+                <input type="text" name="company" id="company">
+            </div>
+
+            <!-- LinkedIn URL -->
+            <div id="linkedin-group">
+                <label for="linkedin" >LinkedIn URL</label>
+                <input type="text" name="linkedin" id="linkedin">
+            </div>
+
+            <!-- Email Address -->
+            <div id="email-group">
+                <label for="email" >Email Address</label>
+                <input type="email" name="email" id="email">
+            </div>
+        </fieldset>
+
+        <fieldset id="meeting">
+           <!-- Dropdown select on how we met -->
+           <div id="how-meet-group">
+                <label for="how-meet"> How did we meet?</label>
+                <select name="how-meet" id="how-meet">
+                    <option value="none">Please select</option>
+                    <option value="networking">Networking Event</option>
+                    <option value="work">Workplace</option>
+                    <option value="online">Online meeting</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+
+                <!-- If other was picked, enter how -->
+                 <div id="specify-group">  
+                    <label for="other-specify">Other (please specify)</label>
+                    <input type="text" name="other-specify" id="other-specify">
+                 </div>     
+
+        </fieldset>
+
+            <!-- section for entering a message -->
+            <fieldset id="message-area">
+                <label for="message">Message</label>
+                <textarea name="message" id="message" rows="6"></textarea>
+            </fieldset>
+
+            <fieldset id="mailing">
+                <!-- checkbox to add me to mailing list -->
+                <label for="add-mail">
+                    <input type="checkbox" name="add-mail" id="add-mail" value="checked">
+                    Please add me to your mailing list
+                </label>
+
+                <!-- choose format for the email -->
+                <span id="mail-label">Choose an email format:</span>
+                <label for="HTML" class="mail-option">
+                    <input type="radio">
+                    HTML
+                </label>
+                <label for="text" class="mail-option">
+                    <input type="radio">
+                    Text
+                </label>
+            </fieldset>
+
+            <!-- Submit button for the form -->
+            <button type="submit">Submit</button>
+    </form>
+    </div>
+    
+</body>
+</html>

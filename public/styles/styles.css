@@ -1,0 +1,122 @@
+* {
+    box-sizing:border-box;
+}
+
+
+body {
+    background-color: rgb(235, 231, 231);
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+#content-container {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+
+}
+
+/* displaying general info as grid */
+#general-info {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas: 
+    "fname lname job"
+    "company linkedin email";
+    grid-gap: 1rem;
+
+     input {
+    width: 100%;
+ }
+
+}
+
+/* General info section names for grid */
+label {
+    display: block;
+    margin-bottom: 0.3rem;
+    font-weight:bold;
+}
+
+#fname-group {
+    grid-area: fname;
+}
+
+#lname-group{
+    grid-area: lname;
+}
+
+#job-group {
+    grid-area: job;
+}
+
+#company-group {
+    grid-area: company;
+}
+
+#linkedin-group {
+    grid-area: linkedin;
+}
+
+#email-group {
+    grid-area: email;
+}
+
+/* Displaying the how we met section as a grid */
+#meeting {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas: 
+    "meet-selection specify";
+    grid-gap: 1rem;
+
+    #how-meet-group {
+        grid-area: meet-selection;
+    }
+
+    #specify-group {
+        grid-area: specify;
+    }
+    
+    input, select {
+        width: 100%;
+    }
+}
+
+#mail-label {
+    font-weight: bold;
+}
+.mail-option {
+    display: inline;
+}
+
+h1 {
+    text-align: center;
+}
+
+fieldset {
+    margin: 1rem;
+    border: none;
+}
+
+input[type="text"], input[type="email"], select {
+    height: 2.2rem;
+}
+
+textarea {
+    width: 100%;
+    
+}
+
+button {
+    background-color: rgb(25, 173, 25);
+    color: white;
+    padding:  0.6rem 1rem;
+    border-radius: 0.2rem;
+    margin: 0 1rem 1rem 1rem;
+    border: none;
+}
+
+button:hover {
+    background-color: rgb(20, 133, 20);
+    cursor: pointer;
+}
