@@ -120,3 +120,8 @@ button:hover {
     background-color: rgb(20, 133, 20);
     cursor: pointer;
 }
+
+.error {
+    color: red;
+    display: none;
+}

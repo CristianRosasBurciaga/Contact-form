@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="/images/favicon.png">
     <link rel="stylesheet" href="/styles/styles.css">
+    <script src="/scripts/contact.js" defer></script>
     <title>Contact Form</title>
 </head>
 <body>
@@ -17,12 +18,14 @@
             <div id="fname-group">
                 <label for="fname" >First Name</label>
                 <input type="text" name="fname" id="fname">
+                <span class="error" id="error-fname">First name is required</span>
             </div>
 
             <!-- Last name input -->
             <div id="lname-group">
                 <label for="lname" >Last Name</label>
                 <input type="text" name="lname" id="lname">
+                <span class="error" id="error-lname">Last name is required</span>
             </div>
 
             <!-- Job title input -->
@@ -41,6 +44,7 @@
             <div id="linkedin-group">
                 <label for="linkedin" >LinkedIn URL</label>
                 <input type="text" name="linkedin" id="linkedin">
+                <span class="error" id="error-linkedin">LinkedIn URL needs to start with "https://linkedin.com/in/"</span>
             </div>
 
             <!-- Email Address -->
@@ -61,6 +65,7 @@
                     <option value="online">Online meeting</option>
                     <option value="other">Other</option>
                 </select>
+                <span class="error" id="error-how-meet">How we met is required</span>
             </div>
 
                 <!-- If other was picked, enter how -->
@@ -79,8 +84,8 @@
 
             <fieldset id="mailing">
                 <!-- checkbox to add me to mailing list -->
-                <label for="add-mail">
-                    <input type="checkbox" name="add-mail" id="add-mail" value="checked">
+                <label for="mail-list">
+                    <input type="checkbox" name="mail-list" id="mail-list" value="checked">
                     Please add me to your mailing list
                 </label>
 
