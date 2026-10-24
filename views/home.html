@@ -51,6 +51,7 @@
             <div id="email-group">
                 <label for="email" >Email Address</label>
                 <input type="email" name="email" id="email">
+                <span class="error" id="error-email">Email is required</span>
             </div>
         </fieldset>
 
@@ -86,19 +87,21 @@
                 <!-- checkbox to add me to mailing list -->
                 <label for="mail-list">
                     <input type="checkbox" name="mail-list" id="mail-list" value="checked">
-                    Please add me to your mailing list
+                    Please add me to your mailing list (if checked, email is required)
                 </label>
 
                 <!-- choose format for the email -->
-                <span id="mail-label">Choose an email format:</span>
-                <label for="HTML" class="mail-option">
-                    <input type="radio" id="HTML" name="mail" value="text">
-                    HTML
-                </label>
-                <label for="text" class="mail-option">
-                    <input type="radio" id="text" name="mail" value="text">
-                    Text
-                </label>
+                <div id="email-format-group">
+                    <span id="mail-label">Choose an email format:</span>
+                    <label for="HTML" class="mail-option">
+                        <input type="radio" id="HTML" name="mail" value="text">
+                        HTML
+                    </label>
+                    <label for="text" class="mail-option">
+                        <input type="radio" id="text" name="mail" value="text">
+                        Text
+                    </label>
+                </div>
             </fieldset>
 
             <!-- Submit button for the form -->
