@@ -52,7 +52,7 @@ document.getElementById("contact-form").onsubmit = () => {
             valid = false;
      } 
      //if email is not empty, test the input for validation
-     else if (email =! "") {
+     else if (email !== "") {
         let regexEmail = /^.+@.+\.[a-zA-Z]{2,}$/;
 
         if(regexTest(regexEmail, email) === false) {
@@ -60,11 +60,6 @@ document.getElementById("contact-form").onsubmit = () => {
             valid = false;
         }
     }
-
-    //display email formats if mailList is checked
-//     if(mailList === true) {
-//         document.getElementById("email-format-group").style.display = "block";
-//     }
 
      return valid;
 };
