@@ -6,7 +6,7 @@ document.getElementById("contact-form").onsubmit = () => {
 
     //form validation for first name
     //if first name is empty, dont submit the form
-    let fname = document.getElementById("fname").value;
+    let fname = document.getElementById("fname").value.trim();
     if(fname === "") {
         document.getElementById("error-fname").style.display = "block";
         valid = false;
@@ -14,7 +14,7 @@ document.getElementById("contact-form").onsubmit = () => {
 
     //form validation for last name
     //if last name is empty, dont submit the form
-    let lname = document.getElementById("lname").value;
+    let lname = document.getElementById("lname").value.trim();
     if(lname === "") {
         document.getElementById("error-lname").style.display = "block";
         valid = false;
@@ -30,7 +30,6 @@ document.getElementById("contact-form").onsubmit = () => {
     if(regexTest(regexLinkedIn, linkedInURL) === false) {
         document.getElementById("error-linkedin").style.display = "block";
         valid = false;
-        console.log(valid);
     }
     }
 
@@ -60,7 +59,7 @@ document.getElementById("contact-form").onsubmit = () => {
             valid = false;
         }
     }
-
+        console.log(valid);
      return valid;
 };
 

@@ -6,9 +6,12 @@ const app = express();
 
 // Define the port number where our server will listen
 const PORT = 3002;
+const contacts = [];
 
 //Enable static file serving
 app.use(express.static('public'));
+
+app.use(express.urlencoded({extended: true}))
 
 // Define a default "route" ('/')
 // req: contains information about the incoming request
@@ -16,6 +19,22 @@ app.use(express.static('public'));
 app.get('/', (req, res) => {
     res.sendFile(`${import.meta.dirname}/views/home.html`)
 });
+
+app.post('/confirm', (req,res) => {
+    const contact = req.body;
+
+    console.log(contact);   
+
+    //add contact to contacts array
+    contacts.push(contact);
+    console.log(contacts);      
+
+    res.sendFile(`${import.meta.dirname}/views/confirm.html`, {contact})
+});
+
+app.get('/admin', (req, res) => {
+    res.send(contacts);
+})
 
 // Start the server and listen on the specified port 
 app.listen(PORT, () => {
