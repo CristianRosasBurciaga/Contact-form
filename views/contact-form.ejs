@@ -4,11 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="/images/favicon.png">
-    <link rel="stylesheet" href="/styles/styles.css">
+    <link rel="stylesheet" href="/styles/form-styles.css">
+    <link rel="stylesheet" href="/styles/nav-styles.css">
     <script src="/scripts/contact.js" defer></script>
     <title>Contact Form</title>
 </head>
 <body>
+    <%- include('partials/nav') %>
     <div id="content-container">
     <h1>Cristian Rosas B. - Contact Form</h1>
 
@@ -58,21 +60,22 @@
         <fieldset id="meeting">
            <!-- Dropdown select on how we met -->
            <div id="how-meet-group">
-                <label for="how-meet"> How did we meet?</label>
-                <select name="how-meet" id="how-meet">
+                <label for="howMeet"> How did we meet?</label>
+                <select name="howMeet" id="how-meet">
                     <option value="none">Please select</option>
-                    <option value="networking">Networking Event</option>
-                    <option value="work">Workplace</option>
-                    <option value="online">Online meeting</option>
+                    <option value="Networking Event">Networking Event</option>
+                    <option value="Workplace">Workplace</option>
+                    <option value="Online Meeting">Online meeting</option>
                     <option value="other">Other</option>
                 </select>
                 <span class="error" id="error-how-meet">How we met is required</span>
             </div>
 
                 <!-- If other was picked, enter how -->
-                 <div id="specify-group">  
-                    <label for="other-specify">Other (please specify)</label>
-                    <input type="text" name="other-specify" id="other-specify">
+                 <div id="other-group">  
+                    <label for="other">Other (please specify)</label>
+                    <input type="text" name="other" id="other">
+                <span class="error" id="error-other">How we met is required</span>
                  </div>     
 
         </fieldset>

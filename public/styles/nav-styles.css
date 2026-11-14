@@ -1,0 +1,28 @@
+body {
+    margin: 0;
+}
+
+nav {
+    background-color:#D2D6DB;
+    width: 100%;
+    position: sticky;
+    top: 0;
+    padding: 1.5rem;
+}
+
+#link-container {
+    display: flex;
+    justify-content: space-evenly;
+    border: none;
+}
+
+a{
+    background-color: #3b75f3;
+    color: white;
+    font-family:Arial, Helvetica, sans-serif;
+    padding: 0.8rem;
+    border-radius: 0.25rem;
+    text-decoration: none;
+} a:hover {
+    background-color: #1D4ED8;
+}

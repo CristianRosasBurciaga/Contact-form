@@ -10,30 +10,35 @@ const contacts = [];
 
 //Enable static file serving
 app.use(express.static('public'));
-
 app.use(express.urlencoded({extended: true}))
+app.set('view engine', 'ejs');
+
 
 // Define a default "route" ('/')
 // req: contains information about the incoming request
 // res: allows us to send back a response to the client
 app.get('/', (req, res) => {
-    res.sendFile(`${import.meta.dirname}/views/home.html`)
+    res.render('home');
+});
+
+app.get('/contact-form', (req, res) => {
+    res.render('contact-form');
 });
 
 app.post('/confirm', (req,res) => {
     const contact = req.body;
-
+    contact.timestamp = new Date();
     console.log(contact);   
 
     //add contact to contacts array
     contacts.push(contact);
     console.log(contacts);      
 
-    res.sendFile(`${import.meta.dirname}/views/confirm.html`, {contact})
+    res.render('confirm', {contact})
 });
 
 app.get('/admin', (req, res) => {
-    res.send(contacts);
+    res.render('admin', {contacts})
 })
 
 // Start the server and listen on the specified port 

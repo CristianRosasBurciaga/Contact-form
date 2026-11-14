@@ -23,7 +23,7 @@ document.getElementById("contact-form").onsubmit = () => {
     //form validation for LinkedIn url
     //LinkedIn URL is optional
     //But if it is filled, it must start with https://linkedin.com/in/ 
-    let linkedInURL = document.getElementById("linkedin").value;
+    let linkedInURL = document.getElementById("linkedin").value.trim();
     if(linkedInURL !== "") {
     let regexLinkedIn = /^https:\/\/linkedin\.com\/in\/+/;
 
@@ -35,8 +35,12 @@ document.getElementById("contact-form").onsubmit = () => {
 
      //form validation for how we met
     let howMeet = document.getElementById("how-meet").value;
+    let other = document.getElementById("other").value.trim();
     if(howMeet === "none") {
         document.getElementById("error-how-meet").style.display = "block";
+        valid = false;
+    } else if(howMeet === "other") {
+        document.getElementById("error-other").style.display = "block";
         valid = false;
     }
 

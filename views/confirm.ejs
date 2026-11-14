@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Confirmation</title>
+
+    <link rel="stylesheet" href="/styles/nav-styles.css">
+    <link rel="stylesheet" href="/styles/portfolio-styles.css">
+</head>
+<body>
+    <%- include('partials/nav') %>
+    <div id="content-container">
+    <h1>Thank you for filling out the form <%= contact.fname %>! :)</h1>
+    <h2>Form summary</h2>
+    <p>Name: <%= contact.fname %> <%= contact.lname %></p>
+    <p>Job Title: <%= contact.job %></p>
+    <p>Company: <%= contact.company %></p>
+    <p>LinkedIn: <%= contact.linkedin %></p>
+    <p>Email: <%= contact.email %> </p>
+    <% if(contact.howMeet !== "other") { %>
+    <p>Met via: <%= contact.howMeet %> </p>
+    <% } else if(contact.howMeet === "other") { %>
+    <p>Met via: <%= contact.other %> </p>
+    <% } %>
+    <p>Message: <%= contact.message %></p>
+    <p>Date and Time: <%= contact.timestamp.toLocaleString() %></p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Page</title>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="https://cdn.datatables.net/3.1.4/js/dataTables.min.js"></script>
+    <link  rel="stylesheet" href="https://cdn.datatables.net/3.1.4/css/dataTables.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/responsive/4.1.1/css/responsive.dataTables.min.css">
+    <script src="https://cdn.datatables.net/responsive/4.1.1/js/dataTables.responsive.min.js"></script>
+    <link rel="stylesheet" href="/styles/nav-styles.css">
+    <link rel="stylesheet" href="/styles/portfolio-styles.css">
+</head>
+<body>
+    <%- include('partials/nav') %>
+    <div id="table-container">
+       <h1>Admin page</h1>
+        <% if(contacts.length === 0) { %>
+            <h2>Sorry, there are no contacts to display right now</h2>
+            <% } else { %>
+        <div class="table-wrap">
+            <table id="contact-table" class="display nowrap" style="width:100%">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Job Title</th>
+                        <th>Company</th>
+                        <th>LinkedIn</th>
+                        <th>Email</th>
+                        <th>Met via</th>
+                        <th>Message</th>
+                        <th>Date/Time</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% contacts.forEach(contact => { %>
+                        <tr>
+                            <td><%= contact.fname %> <%= contact.lname %></td>
+                            <td><%= contact.job %></td>
+                            <td><%= contact.company %></td>
+                            <td><%= contact.linkedin %></td>
+                            <td><%= contact.email %></td>
+                            <% if(contact.howMeet !== "other") { %>
+                            <td> <%= contact.howMeet %> </td>
+                            <% } else if(contact.howMeet === "other") { %>
+                            <td><%= contact.other %></td>
+                            <% } %>
+                            <td><%= contact.message %></td>
+                            <td><%= contact.timestamp.toLocaleString() %></td>
+                        </tr>
+                    <%}); %>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <% } %>
+    
+    <script>
+        new DataTable('#contact-table', 
+            {responsive: true}); 
+    </script>
+</body>
+</html>
