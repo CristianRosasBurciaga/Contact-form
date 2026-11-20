@@ -1,5 +1,16 @@
 // Import the express module
 import express from 'express';
+import mysql2 from 'mysql2';
+import dotenv from 'dotenv';
+dotenv.config();
+
+const pool = mysql2.createPool({
+    host: process.env.DB_HOST,
+    user: process.env.DB_USER,
+    password: process.env.DB_PASSWORD,
+    database: process.env.DB_NAME,
+    port: process.env.DB_PORT
+}).promise();
 
 // Create an instance of an Express application
 const app = express();
@@ -13,6 +24,16 @@ app.use(express.static('public'));
 app.use(express.urlencoded({extended: true}))
 app.set('view engine', 'ejs');
 
+//TEST CODE
+app.get('/db-test', async(req, res) => {
+    try {
+        const [orders] = await pool.query('SELECT * FROM contacts')
+        res.send(orders);
+    } catch(err) {
+        console.error('Database err: ', err);
+        res.status(500).send('Database error occured.')
+    } 
+});
 
 // Define a default "route" ('/')
 // req: contains information about the incoming request
